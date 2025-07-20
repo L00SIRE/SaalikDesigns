@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #16213e 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-purple to-accent-blue text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-purple/40 relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500;
+  }
+  
+  .btn-primary:hover::before {
+    @apply left-[100%];
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-purple via-accent-blue to-accent-indigo bg-clip-text text-transparent;
+  }
+  
+  .nav-link {
+    @apply text-white font-medium transition-all duration-300 relative hover:text-accent-purple hover:-translate-y-0.5;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-accent-purple to-accent-blue transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .service-card {
+    @apply bg-gradient-to-br from-dark-950/60 to-dark-800/60 p-10 rounded-2xl backdrop-blur-md border border-accent-purple/20 transition-all duration-300 relative overflow-hidden hover:-translate-y-2.5 hover:shadow-3xl hover:shadow-accent-purple/30 hover:border-accent-purple/50;
+  }
+  
+  .service-card::before {
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-accent-purple/10 to-transparent transition-all duration-500;
+  }
+  
+  .service-card:hover::before {
+    @apply left-[100%];
+  }
+  
+  .floating-element {
+    @apply absolute w-16 h-16 bg-gradient-to-br from-accent-purple to-accent-blue rounded-lg opacity-70;
+  }
+  
+  .floating-element:nth-child(1) {
+    @apply top-[15%] left-[10%] animate-float-1;
+  }
+  
+  .floating-element:nth-child(2) {
+    @apply top-[45%] left-[15%] animate-float-2;
+  }
+  
+  .floating-element:nth-child(3) {
+    @apply top-[70%] left-[75%] animate-float-3;
+  }
+  
+  .floating-element:nth-child(4) {
+    @apply top-[85%] left-[80%] animate-float-4;
+  }
+  
+  .hero-title {
+    @apply text-6xl md:text-8xl font-bold mb-5 gradient-text animate-glow;
+  }
+  
+  .section-title {
+    @apply text-5xl font-bold text-center mb-16 gradient-text;
+  }
+  
+  .contact-section {
+    @apply py-24 px-12 bg-gradient-to-br from-dark-950/80 to-dark-800/80 backdrop-blur-md;
+  }
+  
+  .contact-item {
+    @apply flex items-center gap-4 text-accent-light text-lg;
+  }
+  
+  .contact-item-icon {
+    @apply text-accent-purple text-2xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .backdrop-blur-nav {
+    backdrop-filter: blur(10px);
+  }
+  
+  .shadow-3xl {
+    box-shadow: 0 30px 60px rgba(226, 60, 255, 0.3);
+  }
+} 
